@@ -10,10 +10,6 @@
   </thead>
 
   <tbody>
-    <% @instagram.each do |instagram| %>
-      <%= image_tag instagram.images.first.last.url %>
-    <% end %>
-
     <% @artists.each do |artist| %>
       <tr>
         <td><%= link_to 'Show', artist %></td>
