@@ -28,6 +28,10 @@ gem 'instagram'
 gem 'better_errors'
 #devise for user authentication
 gem 'devise'
+#wickedpdf gem for html to pdf conversion
+gem 'wicked_pdf'
+#binaries for the wicked_pdf wrapper
+gem 'wkhtmltopdf-binary'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
