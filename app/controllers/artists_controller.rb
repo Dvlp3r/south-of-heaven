@@ -4,24 +4,12 @@ class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
   def index
-    Instagram.configure do |config|
-      config.client_id = "614bd5033e9c4492a5da0a515e505b99"
-      config.client_secret = "3c6f57829870483599f1fa5772ef2a2a"
-      # For secured endpoints only
-      #config.client_ips = '<Comma separated list of IPs>'
-    end
-    callback_url = "http://localhost:3000/artist"
-    redirect_to Instagram.authorize_url(:redirect_uri => callback_url)
-    # response = Instagram.get_access_token(params[:code], :redirect_uri => callback_url)
-    # session[:access_token] = response.access_token
-    # redirect "/artists"
-    # @instagram = Instagram.user_recent_media("614bd5033e9c4492a5da0a515e505b99")
+    @artists = Artist.all
   end
 
   # GET /artists/1
   # GET /artists/1.json
   def show
-    #@artist.set_artist_instagram_session
   end
 
   # GET /artists/new
