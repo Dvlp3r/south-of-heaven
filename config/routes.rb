@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :artists
 
-  # get '/waiver' => 'waiver#show'
-  # post '/waiver-submit' => 'waiver#submit'
+  get '/waiver' => 'waiver#show'
+  post '/waiver-submit' => 'waiver#submit'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
