@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  root to: "artists#index"
+
 
   devise_for :users
   resources :artists
 
+  root 'pages#index'
+
+  get '/contact' => 'pages#contact'
+
   get '/waiver' => 'waiver#show'
   post '/waiver-submit' => 'waiver#submit'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
