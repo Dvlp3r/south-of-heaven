@@ -10,6 +10,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1
   # GET /artists/1.json
   def show
+    @artist = Artist.find(params[:id])
   end
 
   # GET /artists/new
@@ -61,6 +62,22 @@ class ArtistsController < ApplicationController
     end
   end
 
+  # def connect
+  #   @artist = Artist.find(params[:id])
+
+  #   Instagram.configure do |config|
+  #     config.client_id = "614bd5033e9c4492a5da0a515e505b99"
+  #     config.client_secret = "3c6f57829870483599f1fa5772ef2a2a"
+  #   end
+
+  #   redirect_to Instagram.authorize_url(:redirect_uri => oauth_callback_path(:id => @artist.id))
+  # end
+
+  # def instagram_session
+  #   @artist = Artist.find(params[:id])
+  #   @artist.set_artist_instagram_session
+  # end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_artist
@@ -69,6 +86,6 @@ class ArtistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params[:artist]
+      params.require(:artist).permit(:name, :instagramtag)
     end
 end

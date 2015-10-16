@@ -15,6 +15,8 @@
 		<link rel='stylesheet' href='/css/page.css' type='text/css' media='all' />
 		<link rel='stylesheet' href='/css/preloader.css' type='text/css' media='all' />
 		<link rel='stylesheet' href='/css/magnific-popup.css' type='text/css' media='all' />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+ 		<script type="text/javascript" src="/js/instafeed.js"></script>
 
 </head>
 <body data-spy="scroll">
@@ -94,6 +96,19 @@
 															<li><a href="/">Blog</a></li>
 															<li><a href="#">Live Feed</a></li>
 
+														  <% if user_signed_in? %>
+														  <li>
+														  	Logged in as <strong><%= current_user.email %></strong>.
+														    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+														    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+														  </li>
+														  <li>
+															  <% else %>
+															    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+															    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+															  <% end %>
+															</li>
+
 														</ul>
 													</li>
 												</ul>
@@ -125,46 +140,35 @@
 												</ul>
 											</li>
 											<li class="navbar-search">
-                                                <a class="navbar-search-button" href="#">
-                                                    <i class="fa fa-search"></i>
-                                                </a>
-                                                <div class="search-form-wrap show-popup hide">
-                                                    <form class="searchform">
-                                                        <input type="search" class="searchinput" placeholder="Search..."/>
-                                                        <input type="submit" class="searchsubmit hidden" name="submit" value="Search"/>
-                                                    </form>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </nav>
-								</div>
-							</div>
-						</div>
+	                      <a class="navbar-search-button" href="#">
+	                          <i class="fa fa-search"></i>
+	                      </a>
+	                      <div class="search-form-wrap show-popup hide">
+	                          <form class="searchform">
+	                              <input type="search" class="searchinput" placeholder="Search..."/>
+	                              <input type="submit" class="searchsubmit hidden" name="submit" value="Search"/>
+	                          </form>
+	                      </div>
+	                  </li>
+	              </ul>
+	          </nav>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
 
 </header>
 
 
-<%= yield %>
-
 </head>
 <body>
 
-  <% if notice %>
+	<% if notice %>
     <p class="alert alert-success"><%= notice %></p>
   <% end %>
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
-
-  <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
   <% end %>
 
   <%= yield %>

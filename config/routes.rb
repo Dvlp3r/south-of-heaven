@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   root 'pages#index'
 
+  get '/oauth/connect' => 'artists#connect'
+  get '/oauth/callback' => 'artists#instagram_session'
+
   get '/contact' => 'pages#contact'
 
   get '/waiver' => 'waiver#show'
