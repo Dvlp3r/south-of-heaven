@@ -76,6 +76,13 @@ Description: Creative Responsive Wordpress Theme
  * 35.0 - Responsive: Utility classes
  * 36.0 - Custom style
  */
+
+#instafeed img {
+  width: 25%;
+  padding: 1%;
+  border-radius: 50%;
+}
+
 @font-face {
   font-family: "Flaticon";
   src: url('../fonts/flaticon.eot');
