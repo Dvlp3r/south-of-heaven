@@ -9,12 +9,19 @@
 
     <tbody>
       <% @artists.each do |artist| %>
-        <tr>
-          <td><%= artist.name %><%#= link_to 'Show', artist %></td>
-          <td><%= artist.bio %></td>
-          <td><%= image_tag artist.pic %></td>
-          <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-          <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <div class="portfolio-wrap masonry-wrap portfolio-layout-masonry row profile-pic">
+          <p><%= image_tag artist.pic %></p>
+      </div>
+          <div class="bio">
+            <blockquote><%= artist.bio %></blockquote>
+          </div>
+        
+          <%= artist.name %>
+
+          <% if current_user %>
+            <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+            <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

@@ -77,6 +77,17 @@ Description: Creative Responsive Wordpress Theme
  * 36.0 - Custom style
  */
 
+.bio {
+  margin-top: -250px;
+  text-align: right;
+}
+
+.profile-pic img {
+  height: 250px;
+  padding: 25px;
+  float: left;
+}
+
 #instafeed img {
   width: 25%;
   padding: 1%;
