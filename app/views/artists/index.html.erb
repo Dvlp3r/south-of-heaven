@@ -1,4 +1,4 @@
-<h1>Listing Artists</h1>
+<h1 class="title">Meet the Artists</h1>
 <% if current_user %>
   <table>
     <thead>
@@ -9,10 +9,25 @@
 
     <tbody>
       <% @artists.each do |artist| %>
-        <tr>
-          <td><%= artist.name %><%= link_to 'Show', artist %></td>
-          <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-          <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <div class="name">
+        
+      </div>
+      <div class="space">
+        <div class="row profile-pic">
+          <div class="name">
+            <%= artist.name %>
+          </div>
+          <%= image_tag artist.pic %>
+          <div class="bio">
+            <p><%= artist.bio %></p>
+          </div>
+        </div>
+      </div>
+
+          <% if current_user %>
+            <td><%= artist.name %> - <%= link_to 'Edit', edit_artist_path(artist) %></td>
+            <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

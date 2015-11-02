@@ -5,6 +5,9 @@ $( document ).ready(function() {
     get: 'tagged',
     tagName: $('#instafeed').data('url'),
     clientId: '614bd5033e9c4492a5da0a515e505b99',
+    sortBy: 'most-recent',
+    resolution: 'standard_resolution',
+    limit: 8
   });
 
   userFeed.run();

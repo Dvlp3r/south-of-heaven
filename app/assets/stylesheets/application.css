@@ -76,6 +76,41 @@ Description: Creative Responsive Wordpress Theme
  * 35.0 - Responsive: Utility classes
  * 36.0 - Custom style
  */
+
+ .title {
+  margin-top: 50px;
+  margin-left: 15vw;
+ }
+
+.name {
+  font-size: x-large;
+  font-family: Flaticon;
+  margin-top: 40px;
+  margin-left: 25px;
+}
+
+.space {
+  margin: 3vw 15vw;
+  border-top: 1px solid grey;
+}
+
+.bio {
+  margin:25px 25px;
+}
+
+.profile-pic img {
+  height: 250px;
+  margin: 25px;
+  float: left;
+
+}
+
+#instafeed img {
+  width: 25%;
+  padding: 1%;
+  border-radius: 50%;
+}
+
 @font-face {
   font-family: "Flaticon";
   src: url('../fonts/flaticon.eot');
