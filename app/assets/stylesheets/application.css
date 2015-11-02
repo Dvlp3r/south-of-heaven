@@ -77,15 +77,32 @@ Description: Creative Responsive Wordpress Theme
  * 36.0 - Custom style
  */
 
+ .title {
+  margin-top: 50px;
+  margin-left: 15vw;
+ }
+
+.name {
+  font-size: x-large;
+  font-family: Flaticon;
+  margin-top: 40px;
+  margin-left: 25px;
+}
+
+.space {
+  margin: 3vw 15vw;
+  border-top: 1px solid grey;
+}
+
 .bio {
-  margin-top: -250px;
-  text-align: right;
+  margin:25px 25px;
 }
 
 .profile-pic img {
   height: 250px;
-  padding: 25px;
+  margin: 25px;
   float: left;
+
 }
 
 #instafeed img {
