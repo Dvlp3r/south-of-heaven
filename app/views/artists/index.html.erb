@@ -1,66 +1,64 @@
 <script type="text/javascript" src="/js/instafeed-multi.js"></script>
 
 <h1 class="title">Meet the Artists</h1>
-<% if current_user %>
-  <table>
-    <thead>
-      <tr>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-    <tbody>
-      <% @artists.each do |artist| %>
-      <div class="name">
-        
-      </div>
-      <div class="space">
-        <div class="row profile-pic">
-          <div class="name">
-            <%= artist.name %>
-            <p class="instamodal"><a href="#instafeed-<%= artist.instagramtag %>" rel="modal:open">See My Work</a></p>
-          </div>
-          <%= image_tag artist.pic %>
-          <div class="bio">
-            <p><%= artist.bio %></p>
-          </div>
+  <tbody>
+    <% @artists.each do |artist| %>
+    <div class="name">
+      
+    </div>
+    <div class="space">
+      <div class="row profile-pic">
+        <div class="name">
+          <%= artist.name %>
+          <p class="instamodal"><a href="#instafeed-<%= artist.instagramtag %>" rel="modal:open">See My Work</a></p>
+        </div>
+        <%= image_tag artist.pic %>
+        <div class="bio">
+          <p><%= artist.bio %></p>
         </div>
       </div>
+    </div>
 
-      <div id="instafeed-<%= artist.instagramtag %>" class="instafeed" style="display:none;">
-          <p><a href="#" rel="modal:close"></a></p>
-          <div class="instafeed-title">
-            <p>#<%= artist.instagramtag %></p>
-          </div>
-      </div>
+    <div id="instafeed-<%= artist.instagramtag %>" class="instafeed" style="display:none;">
+        <p><a href="#" rel="modal:close"></a></p>
+        <div class="instafeed-title">
+          <p>#<%= artist.instagramtag %></p>
+        </div>
+    </div>
 
-          <% if current_user %>
-            <td><%= artist.name %> - <%= link_to 'Edit', edit_artist_path(artist) %></td>
-            <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-
-  <%= link_to 'New Artist', new_artist_path %>
-
-  <% else %>
-  <table>
-    <thead>
-      <tr>
-        <th colspan="3"></th>
+        <% if current_user %>
+          <td><%= artist.name %> - <%= link_to 'Edit', edit_artist_path(artist) %></td>
+          <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
-    </thead>
+    <% end %>
+  </tbody>
+</table>
+<br>
 
-    <tbody>
-      <% @artists.each do |artist| %>
-        <tr>
-          <td><%= artist.name %><%= link_to 'Show', artist %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-<% end %>
+<%= link_to 'New Artist', new_artist_path %>
+
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @artists.each do |artist| %>
+      <tr>
+        <td><%= artist.name %><%= link_to 'Show', artist %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
