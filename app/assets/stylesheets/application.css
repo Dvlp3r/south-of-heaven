@@ -82,11 +82,13 @@ Description: Creative Responsive Wordpress Theme
   margin-left: 15vw;
  }
 
-.name {
+.name, .instafeed-title {
   font-size: x-large;
   font-family: Flaticon;
   margin-top: 40px;
   margin-left: 25px;
+  color: #57bb8a;
+  text-transform: uppercase;
 }
 
 .space {
@@ -102,7 +104,24 @@ Description: Creative Responsive Wordpress Theme
   height: 250px;
   margin: 25px;
   float: left;
+}
 
+.instamodal {
+  float: right;
+}
+
+.instafeed img {
+  width: 25%;
+  padding: 1%;
+  border-radius: 50%;
+}
+
+.instafeed p a {
+  float: right;
+}
+
+#instafeed {
+  margin: 2vw 0;  
 }
 
 #instafeed img {
@@ -10679,7 +10698,7 @@ button.close {
 /*--------------------------------------------------------------
 20.0 - Modals
 --------------------------------------------------------------*/
-.modal-open {
+/*.modal-open {
   overflow: hidden;
 }
 .modal {
@@ -10807,7 +10826,7 @@ button.close {
   width: 50px;
   height: 50px;
   overflow: scroll;
-}
+}*/
 .user-lostpassword-modal .modal-content,
 .user-login-modal .modal-content {
   border-width: 0px;

@@ -32,6 +32,8 @@ gem 'devise'
 gem 'wicked_pdf'
 #binaries for the wicked_pdf wrapper
 gem 'wkhtmltopdf-binary'
+#gon aids in getting rails variables into js
+gem 'gon'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
