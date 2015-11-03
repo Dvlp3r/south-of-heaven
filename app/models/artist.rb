@@ -15,4 +15,11 @@ class Artist < ActiveRecord::Base
     @artist = client.user  
   end
 
+  def get_instagramtags
+    tags = []
+    Artist.each do |artist|
+      tags << artist.instagramtag
+    end
+  end
+
 end

@@ -5,6 +5,11 @@ class ArtistsController < ApplicationController
   # GET /artists.json
   def index
     @artists = Artist.all
+    tags = []
+    @artists.each do |artist|
+      tags << artist.instagramtag
+    end
+    gon.instagramtags = tags
   end
 
   # GET /artists/1
@@ -61,6 +66,12 @@ class ArtistsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def show_feed
+    respond_to do |format|               
+      format.js
+    end
+  end   
 
   # def connect
   #   @artist = Artist.find(params[:id])
