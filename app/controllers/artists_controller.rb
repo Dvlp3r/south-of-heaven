@@ -31,6 +31,9 @@ class ArtistsController < ApplicationController
   # POST /artists.json
   def create
     @artist = Artist.new(artist_params)
+    if @artist.instagramtag[0] == '#'
+     @artist.instagramtag = @artist.instagramtag.tr('#', '')
+    end
 
     respond_to do |format|
       if @artist.save
