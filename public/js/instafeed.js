@@ -10,20 +10,5 @@ $( document ).ready(function() {
     limit: 8
   });
 
-  // $("#instamodal").onclick = function(){
-  //   var div = document.createElement('div');
-  //   div.id = "instafeed";
-  //   div.data('url') = "kobe";
-  // }
-
-// $(".instamodal").click(function(){
-//   jQuery('<div/>', {
-//     id: 'instafeed',
-//     'data-url': 'kobe',
-//     title: 'Artist Feed',
-//     text: 'Artist instagram feed'
-// }).appendTo('.modalfeed');
-// })
-
    userFeed.run();
 });

@@ -18,7 +18,6 @@
         <div class="row profile-pic">
           <div class="name">
             <%= artist.name %>
-            <!-- Link to open the modal -->
             <p class="instamodal"><a href="#instafeed-<%= artist.instagramtag %>" rel="modal:open">See My Work</a></p>
           </div>
           <%= image_tag artist.pic %>
@@ -27,15 +26,13 @@
           </div>
         </div>
       </div>
-      <!-- <div id="instafeed-<%= artist.instagramtag %>"></div> -->
+
       <div id="instafeed-<%= artist.instagramtag %>" class="instafeed" style="display:none;">
           <p><a href="#" rel="modal:close"></a></p>
           <div class="instafeed-title">
             <p>#<%= artist.instagramtag %></p>
           </div>
       </div>
-      <!-- <div class="modalfeed"></div> -->
-      <%#= link_to 'See Artist Work', show_feed_path, :remote => true, :rel => 'modal:close' %>
 
           <% if current_user %>
             <td><%= artist.name %> - <%= link_to 'Edit', edit_artist_path(artist) %></td>
