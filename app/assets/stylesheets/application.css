@@ -121,7 +121,7 @@ Description: Creative Responsive Wordpress Theme
 }
 
 #instafeed {
-  margin: 2vw 0;  
+  margin: 2vw 0;
 }
 
 #instafeed img {
@@ -203,6 +203,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
+  background-color: #666666;
   margin: 0;
   text-rendering: optimizelegibility;
   letter-spacing: 0.05px;
@@ -20728,4 +20729,8 @@ img.grayscale:hover {
 }
 .empty-space-90 {
   height: 90px;
+}
+
+.navbar-default-wrap {
+  background-color: black;
 }
