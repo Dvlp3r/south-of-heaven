@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/waiver' => 'pages#waiver'
 
-  get '/show-feed' => 'artists#show_feed'
+  get '/show-feed' => 'artists#show_feed', :defaults => { :format => 'json' }
 
 
   # The priority is based upon order of creation: first created -> highest priority.

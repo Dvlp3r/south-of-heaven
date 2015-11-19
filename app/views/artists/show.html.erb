@@ -2,5 +2,5 @@
 
 <div id="instafeed" data-url="<%= @artist.instagramtag %>"></div>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Edit', edit_artist_path(@artist) if current_user%> |
 <%= link_to 'Back', artists_path %>

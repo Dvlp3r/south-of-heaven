@@ -19,9 +19,24 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
  		<script src="/js/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
  		<%= Gon::Base.render_data %>
+
+
+
 </head>
 <body data-spy="scroll">
+  <script type="text/javascript">
+  $(document).ready(function() {
+      //Check if the current URL contains '#'
+      if(document.URL.indexOf("#")==-1){
+          // Set the URL to whatever it was plus "#".
+          url = document.URL;
+          location = "#";
 
+          //Reload the page
+          location.reload(true);
+      }
+  });
+  </script>
 <!-- START SITE -->
 
 <div id="wrapper" class="wide-wrap">
@@ -126,16 +141,18 @@
 														<h3 class="megamenu-title">Artists <span class="caret"></span></h3>
 														<ul class="dropdown-menu">
 															<li><a href="/artists">View All</a></li>
-															<li><a href="#">Brandon</a></li>
-															<li><a href="#">Name 2</a></li>
-															<li><a href="#">Name 3</a></li>
-															<li><a href="#">Name 4</a></li>
+                              <% artists.each do |artist| %>
+                                <li>
+                                  <%= link_to artist.name, artist %>
+                                </li>
+                              <% end %>
 														</ul>
 													</li>
 
 													<li class="visible-lg-inline mega-col-4">
 														<div class="megamenu-sidebar">
-															<img alt="" src="/images/menu-image.png" />
+                              <%= image_tag(artists.sample.pic) %>
+															<!-- <img alt="" src="/images/menu-image.png" /> -->
 															This will be a random artist every time you refresh the page.
 														</div>
 													</li>

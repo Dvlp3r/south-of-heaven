@@ -13,11 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+
 //= require_tree .
 
 $(document).ready(ready);
-
-	ready = function(){
+var ready = function(){
     //Check if the current URL contains '#'
     if(document.URL.indexOf("#")==-1){
         // Set the URL to whatever it was plus "#".
@@ -28,4 +28,3 @@ $(document).ready(ready);
         location.reload(true);
     }
 };
-

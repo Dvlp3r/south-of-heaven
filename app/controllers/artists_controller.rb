@@ -71,10 +71,10 @@ class ArtistsController < ApplicationController
   end
 
   def show_feed
-    respond_to do |format|               
+    respond_to do |format|
       format.js
     end
-  end   
+  end
 
   # def connect
   #   @artist = Artist.find(params[:id])
