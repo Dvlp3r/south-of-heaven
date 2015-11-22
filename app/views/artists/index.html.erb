@@ -1,4 +1,3 @@
-
 <script type="text/javascript" src="/js/instafeed-multi.js"></script>
 
 <h1 class="title">Meet the Artists</h1>
@@ -17,12 +16,20 @@
     <div class="space">
       <div class="row profile-pic">
         <div class="name">
-          <%= artist.name %>
+          <%= link_to artist.name, artist_path(artist) %>
           <p class="instamodal" id="instafeed_modal"><a href="#instafeed-<%= artist.instagramtag %>" rel="modal:open">See My Work</a></p>
         </div>
         <%= image_tag artist.pic %>
         <div class="bio">
-          <p><%= artist.bio %></p>
+          <ul style="list-style-type: none;display: inline;">
+            <li style="display: inline;"><%= artist.bio %></li><br>
+            <br>
+            <% if current_user %>
+              <li style="display: inline;"><%= artist.name %> - <%= link_to 'Edit', edit_artist_path(artist) %>&#160</li>
+              <li style="display: inline;"><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %>&#160</li>
+              <li style="display: inline;"><%= link_to 'Show', artist %>&#160</li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
@@ -34,10 +41,11 @@
         </div>
     </div>
 
-        <% if current_user %>
-          <td><%= artist.name %> - <%= link_to 'Edit', edit_artist_path(artist) %></td>
-          <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <!-- <% if current_user %>
+          <td><%# artist.name %> - <%# link_to 'Edit', edit_artist_path(artist) %>&#160</td>
+          <td><%# link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %>&#160</td>
+          <td><%# link_to 'Show', artist %>&#160</td>
+        <% end %> -->
       </tr>
     <% end %>
   </tbody>
@@ -46,20 +54,4 @@
 
 <% if user_signed_in? %>
   <%= link_to 'New Artist', new_artist_path %>
-  <table>
-    <thead>
-      <tr>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @artists.each do |artist| %>
-        <tr>
-          <td><%= artist.name %><%= link_to 'Show', artist %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
   <% end %>

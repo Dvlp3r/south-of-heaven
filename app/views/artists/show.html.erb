@@ -1,6 +1,19 @@
-<h1>Artist name: <%= @artist.name %></h1>
+<script type="text/javascript" src="/js/instafeed.js"></script>
 
+
+  <h1 style="text-align:center;">Artist name: <%= @artist.name %></h1>
+
+
+<div class="bio">
+  <p style="text-align:center;"><%= @artist.bio %></p>
+</div>
+
+<div class="instafeed-title">
+  <p style="text-align:center;">#<%= @artist.instagramtag %></p>
+</div>
 <div id="instafeed" data-url="<%= @artist.instagramtag %>"></div>
 
-<%= link_to 'Edit', edit_artist_path(@artist) if current_user%> |
-<%= link_to 'Back', artists_path %>
+<div style="text-align:center;">
+  <%= link_to 'Edit', edit_artist_path(@artist) if current_user %> |
+  <%= link_to 'Back', artists_path %>  
+</div>

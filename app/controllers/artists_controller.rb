@@ -16,6 +16,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1.json
   def show
     @artist = Artist.find(params[:id])
+    gon.instagramtags = @artist.instagramtag
   end
 
   # GET /artists/new

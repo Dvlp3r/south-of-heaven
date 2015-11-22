@@ -151,9 +151,9 @@
 
 													<li class="visible-lg-inline mega-col-4">
 														<div class="megamenu-sidebar">
-                              <%= image_tag(artists.sample.pic) %>
-															<!-- <img alt="" src="/images/menu-image.png" /> -->
-															This will be a random artist every time you refresh the page.
+                              <% art = artists.sample %>
+                              <%= link_to image_tag(art.pic), artist_path(art), style: "float:left; margin:1vw;" %>
+                              <%= art.bio %>
 														</div>
 													</li>
 												</ul>
@@ -264,7 +264,7 @@
 									<h3 class="widget-title">
 										<span>Latest Tweets</span>
 									</h3>
-								<!-- 	<div class="recent-tweets">
+									<!-- <div class="recent-tweets">
 										<ul>
 											<li>
 												<span>RT
