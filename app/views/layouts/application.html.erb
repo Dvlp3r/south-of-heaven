@@ -152,8 +152,10 @@
 													<li class="visible-lg-inline mega-col-4">
 														<div class="megamenu-sidebar">
                               <% art = artists.sample %>
-                              <%= link_to image_tag(art.pic), artist_path(art), style: "float:left; margin:1vw;" %>
-                              <%= art.bio %>
+                              <% unless art == nil %>
+                                <%= link_to image_tag(art.pic), artist_path(art), style: "float:left; margin:1vw;" %>
+                                <%= art.bio %>
+                              <% end %>
 														</div>
 													</li>
 												</ul>
