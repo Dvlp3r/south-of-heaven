@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/oauth/callback' => 'artists#instagram_session'
 
   get '/contact' => 'pages#contact'
-
+  get '/piercing' => 'pages#piercing'
 
   get '/waiver' => 'pages#waiver'
 
