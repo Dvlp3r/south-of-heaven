@@ -20734,3 +20734,7 @@ img.grayscale:hover {
 .navbar-default-wrap {
   background-color: black;
 }
+
+#piercingModal {
+  margin: auto;
+}
