@@ -4397,6 +4397,12 @@ label {
   margin-bottom: 0.3448275862068966em;
   font-weight: 600;
 }
+.small_label {
+  font-weight: 200;
+}
+.skinny_label {
+  margin-bottom: 0em;
+}
 input[type="search"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
