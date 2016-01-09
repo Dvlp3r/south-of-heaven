@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
-  def waiver
-  end
+def waiver
+  @piercing = Piercing.new
+  @tattoo = Tattoo.new
+end
 end

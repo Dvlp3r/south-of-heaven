@@ -1,0 +1,2 @@
+module PiercingsHelper
+end

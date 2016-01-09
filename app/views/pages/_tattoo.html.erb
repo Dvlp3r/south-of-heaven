@@ -1,4 +1,4 @@
-<%= form_tag("/") do %>
+<%= form_for @tattoo, url: tattoo_waiver_path do |f| %>
   <h1>South of Heaven Tattoo requires a Copy of the Customers ID</h1>
   <p>
     I release all rights to Photograph- for advertising purposes in
@@ -16,107 +16,15 @@
   <p>
     This information is required by the Florida Health Department please fill it out completely.
   </p>
-  <%= label_tag 'health_conditions', "Do any of the following health conditions apply?" %><br>
-  <%= check_box_tag "diabetes", class:"checkbox-inline"  %> Diabetes <br>
 
-  <%= check_box_tag "epilepsy", class:"checkbox-inline"%> Epilepsy <br>
-
-  <%= check_box_tag "tuberculosis", class:"checkbox-inline" %> Tuberculosis <br>
-
-  <%= check_box_tag "hepatitis", class:"checkbox-inline" %> Hepatitis <br>
-
-  <%= check_box_tag "hiv_aids", class:"checkbox-inline" %> HIV/AIDS <br>
-
-  <%= check_box_tag "hemophilia", class:"checkbox-inline" %> Hemophilia <br>
-
-  <%= check_box_tag "scarring_keloiding", class:"checkbox-inline" %> Scarring/Keloiding <br>
-
-  <%= check_box_tag "pregnant", class:"checkbox-inline" %> Pregnant <br>
-
-  <%= check_box_tag "heart_condition", class:"checkbox-inline" %> Heart Condition <br>
-
-  <%= check_box_tag "eczema_psoriasis", class:"checkbox-inline" %> Eczema/Psoriasis <br>
-
-  <%= check_box_tag "herpes", class:"checkbox-inline" %> Herpes <br>
-
-  <%= check_box_tag "nursing", class:"checkbox-inline" %> Nursing <br>
-
-  <%= check_box_tag "blood_thinners", class:"checkbox-inline" %> Blood thinners <br>
-
-  <%= check_box_tag "hypogylcemia", class:"checkbox-inline" %> Hypogylcemia <br>
-
-  <%= check_box_tag "asthma", class:"checkbox-inline" %> Asthma <br>
-
-  <%= check_box_tag "blood_pressure", class:"checkbox-inline" %> High or Low Blood Pressure <br>
-
-  <%= check_box_tag "metals", class:"checkbox-inline" %> Allergic to metals <br>
-
-  <%= check_box_tag "latex", class:"checkbox-inline" %> Allergic to latex gloves <br>
-
-  <%= check_box_tag "soaps", class:"checkbox-inline" %> Allergic to soaps <br>
-
-  <%= check_box_tag "medications", class:"checkbox-inline" %> Allergic to medications <br>
-
-  <%= label_tag 'Emergency Contact informations' %>
-  <p>
-    If other please provide Physician's name and Phone number
-  </p>
-  <%= radio_button_tag 'emergency', 'local' %>
-  <%= label_tag 'local', "I require the local hospital information/911", class:"radio-inline small_label" %><br>
-
-  ----------------radion button for other <br>
-
-  By checking the following boxes you are agreeing to the terms in which they set. <br>
-  <%= check_box_tag "reaction", style: "float:left;"  %>
-  <%= label_tag 'reaction', "I acknowledge it is not reasonably possible
-                             for the tattoo artist to determine whether",class:"small_label skinny_label" %>
-                             I might have an allergic reaction to the ink or
-                             process involved with the tattoo and further acknowledge
-                             that such a reaction is possible. <br>
-
-  <%= check_box_tag "drugs", style: "float:left;"  %>
-  <%= label_tag 'drugs', "I am not under the influence of drugs or alcohol.
-                             To my knowledge, I do not have any " ,class:"small_label skinny_label" %>
-                            physical, mental or medical impairment or disability which
-                            might affect my well-being as a direct or indirect
-                            result to have a tattoo done at this thime <br>
-  <%= check_box_tag "permanent", style: "float:left;"  %>
-  <%= label_tag 'permanent', "I acknowledge that a tattoo is a permanent change
-                          to my appearance and that no " ,class:"small_label skinny_label" %>
-                          representation have been
-                          made to me as to the ability to later change or remove my tattoo<br>
-  <%= check_box_tag "infection", style: "float:left;"  %>
-  <%= label_tag 'infection', "I acknowledge infection is always possible as a
-                          result of obtaining a tattoo. " ,class:"small_label skinny_label" %>
-                          I have received aftercare
-                          instructions and I agree to follow all of them while
-                           my tattoo is healing. I agree that any and all follow
-                           up work needed due to my own negligence will
-                           be competed at my own expense. <br>
-  <%= check_box_tag "harmless", style: "float:left;"  %>
-  <%= label_tag 'harmless', "I agree to release and forever discharge and hold
-                          harmless the tattoo artist and " ,class:"small_label skinny_label" %>
-                          hold harmless the tattoo artist and SOHT from any and
-                          all claims, damages, or legal actions arising from
-                          or connected in any way with my tattoo, or the
-                          procedure used in completing my tattoo.<br>
-
-  <%= check_box_tag "verify", style: "float:left;"  %>
-  <%= label_tag 'verify', "I have Verified: SIZE, PLACEMENT, SPELLING and DESIGN",
-                          class:"small_label skinny_label" %><br>
-
-  <%= label_tag 'consent', "I Hereby give consent to SOHTattoo to perform the procedures that I have requested" %><br>
   Please write your full legal name
-  <%= text_field_tag 'name', nil, class: 'form-control', placeholder: 'Your Name' %>
+  <%= f.text_field :name, class: 'form-control', placeholder: 'Your Name' %>
 
-  <%= label_tag 'age', 'Age', class: "skinny_label" %><br>
-  <%= number_field_tag 'age', nil, within: 1...120, class:'form-control' %>
+  <%= f.label :age, 'Age', class: "skinny_label" %><br>
+  <%= f.number_field :age, within: 1...120, class:'form-control' %>
 
-  <%= label_tag 'bday', 'Date of Birth', class: "skinny_label" %><br>
-  <%= date_field_tag 'bday', nil, class: "form-control" %>
+  <%= f.label 'contact', 'Contact Number', class: "skinny_label" %><br>
+  <%= f.telephone_field :phone, class: "form-control" %><br>
 
-  <%= label_tag 'contact', 'Contact Number', class: "skinny_label" %><br>
-  <%= text_field_tag 'contact', nil, class: "form-control" %><br>
-
-  <%= submit_tag "Submit", class: "btn btn-info" %>
+  <%= f.submit "Submit", class: "btn btn-info" %>
 <% end %>

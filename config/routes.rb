@@ -16,6 +16,10 @@ Rails.application.routes.draw do
 
   get '/show-feed' => 'artists#show_feed', :defaults => { :format => 'json' }
 
+  post 'piercing', to: 'piercings#create', as: 'piercing_waiver'
+
+  post 'tattoo', to: 'tattoos#create', as: 'tattoo_waiver'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

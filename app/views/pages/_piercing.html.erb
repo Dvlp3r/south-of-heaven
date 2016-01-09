@@ -1,4 +1,4 @@
-<%= form_tag("/") do %>
+<%= form_for @piercing, url: piercing_waiver_path do |f|%>
   <h1>Body Piercing Customer Record SOHTattoo requires a COPY OF THE CUSTOMERS ID</h1>
   <p>
     I release all rights to PHOTOGRAPH – for advertising purposed in print, electronic form or exhibition. This studio has an online live auto feed. This form is complying with the record-keeping requirements of Chapter 64E-19, FAC and needs to be completed before service can be rendered.
@@ -6,73 +6,13 @@
   <p>
     SOHTattoo DOES NOT PIERCE ANYONE UNDER THE AGE OF 18 NO EXCEPTIONS
   </p>
-  <%= label_tag 'name', 'Name', class: "skinny_label", size: "45x5" %><br>
-  <%= text_field_tag 'name', nil, size: "45x5", class: 'form-control'%>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Your Name' %>
 
-  <%= label_tag 'contact', 'Contact Number', class: "skinny_label" %><br>
-  <%= text_field_tag 'contact', nil, class: "form-control", placeholder: '(555)-555-5555' %><br>
+    <%= f.label :age, 'Age', class: "skinny_label" %><br>
+    <%= f.number_field :age, within: 1...120, class:'form-control' %>
 
-  <%= label_tag 'adress', 'Address', class: "skinny_label" %><br>
-  <%= text_field_tag 'adress', nil, class: "form-control"%><br>
+    <%= f.label 'contact', 'Contact Number', class: "skinny_label" %><br>
+    <%= f.telephone_field :phone, class: "form-control" %><br>
 
-  <%= label_tag 'city', 'City', class: "skinny_label" %><br>
-  <%= text_field_tag 'city', nil, class: "form-control"%><br>
-
-  <%= label_tag 'state', 'State', class: "skinny_label" %><br>
-  <%= text_field_tag 'state', nil, class: "form-control"%><br>
-
-  <%= label_tag 'zip', 'Zipcode', class: "skinny_label" %><br>
-  <%= text_field_tag 'zip', nil, class: "form-control"%><br>
-
-  <%= label_tag 'bday', 'Date of Birth', class: "skinny_label" %><br>
-  <%= date_field_tag 'bday', nil, class: "form-control"%>
-
-  <%= label_tag 'gender', 'Gender', class: "skinny_label" %><br>
-  <%= radio_button_tag 'gender', false, :class => 'form-control radio-inline' %> Male <br>
-  <%= radio_button_tag 'gender', false, :class => 'form-control radio-inline' %> Female <br>
-  <br>
-  <%= label_tag 'doc_name', 'Physician Name', class: "skinny_label" %><br>
-  <%= text_field_tag 'doc_name', nil, class: 'form-control' %>
-
-  <%= label_tag 'doc_address', 'Physician Address', class: "skinny_label" %><br>
-  <%= text_field_tag 'doc_address', nil, class: 'form-control' %>
-
-  <%= label_tag 'doc_city', 'Physician: City, State, Zipcode', class: "skinny_label" %><br>
-  <%= text_field_tag 'doc_city', nil, class: 'form-control' %>
-
-  <%= label_tag 'doc_phone', 'Physician Telephone', class: "skinny_label" %><br>
-  <%= text_field_tag 'doc_phone', nil, class: 'form-control' %>
-
-  <%= label_tag 'contact_name', 'Emergency Contact Name', class: "skinny_label" %><br>
-  <%= text_field_tag 'contact_name', nil, class: 'form-control' %>
-
-  <%= label_tag 'contact_Address', 'Emergency Contact Address', class: "skinny_label" %><br>
-  <%= text_field_tag 'contact_Address', nil, class: 'form-control' %>
-
-  <%= label_tag 'contact_city', 'Emergency Contact City, State, Zipcode', class: "skinny_label" %><br>
-  <%= text_field_tag 'contact_city', nil, class: 'form-control' %>
-
-  <br>
-
-  <%= label_tag 'allergies', 'List any allergies you have, including allergies to medications, and allergies to any topical solutions used by SOH. I have advised the artist of any   allergies to metals, latex gloves, soaps and medications. I acknowledge it is not reasonably possible for the artist to determine whether I might have   an allergic reaction to the process involved with the piercing and further acknowledge that such a reaction is possible.', class: "skinny_label" %><br>
-  <%= text_area_tag 'allergies', nil, size: "45x5" %>
-  <br>
-  <%= label_tag 'disorder','Do you have a history of Bleeding disorder?' %>
-  <%= text_area_tag 'disorder', nil, size: "45x5" %><br>
-
-  <%= label_tag 'body_part','Body part pierced?' %><br>
-  <%= text_field_tag 'body_part', nil, size: "45x5", placeholder: "What are you getting pierced?" %><br>
-
-  <%= label_tag 'placement','Placement?' %><br>
-  <%= text_field_tag 'placement', nil, size: "45x5" %><br>
-
-  <%= label_tag 'implications','Description of any implications during Piercing procedure?' %><br>
-  <%= text_area_tag 'implications', nil, size: "45x5" %>
-
-  <label>
-    1) A brief description of my piercing procedure; 2) Any precautions for me to take before my piercing; 3) A description of the risks and possible consequences of body piercing services; 4) Instructions for care and restrictions following my piercing;
-  </label><br>
-  <%= text_field_tag 'placement', nil, size: "45x5", placeholder: "Please write your full legal name" %><br>
-  <br>
-  <%= submit_tag "Submit", class: "btn btn-info" %><br>
-<% end %>
+    <%= f.submit "Submit", class: "btn btn-info" %>
+  <% end %>
