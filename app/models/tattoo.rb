@@ -3,6 +3,7 @@ class Tattoo
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  attr_accessor :name, :age, :phone
+  attr_accessor :name, :health_conditions, :reaction, :drugs, :permanent, :infection,
+                :harmless, :verify, :age, :bday, :contact, :emergency
 
 end

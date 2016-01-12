@@ -18,6 +18,10 @@ class PiercingsController < ApplicationController
   private
 
   def piercing_params
-    params.require(:piercing).permit(:name, :age, :phone)
+    params.require(:piercing).permit(:name, :contact_number, :address, :city, :state,
+                                     :zipcode, :date_of_birth, :gender, :doc_name,
+                                     :doc_address, :doc_city, :doc_phone, :contact_name,
+                                     :contact_address, :contact_city, :allergies, :disorder,
+                                     :body_part, :placement, :implications, :sign )
   end
 end

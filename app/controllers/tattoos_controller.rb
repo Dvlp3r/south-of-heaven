@@ -18,6 +18,8 @@ class TattoosController < ApplicationController
   private
 
   def tattoo_params
-    params.require(:tattoo).permit(:name, :age, :phone)
+    params[:tattoo][:health_conditions] ||= []
+    params.require(:tattoo).permit(:name, :reaction, :drugs, :permanent, :infection,
+                  :harmless, :verify, :age, :bday, :contact, :emergency, health_conditions: [] )
   end
 end

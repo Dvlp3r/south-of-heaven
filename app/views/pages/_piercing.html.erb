@@ -6,13 +6,75 @@
   <p>
     SOHTattoo DOES NOT PIERCE ANYONE UNDER THE AGE OF 18 NO EXCEPTIONS
   </p>
-    <%= f.text_field :name, class: 'form-control', placeholder: 'Your Name' %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Your Name' %><br>
 
-    <%= f.label :age, 'Age', class: "skinny_label" %><br>
-    <%= f.number_field :age, within: 1...120, class:'form-control' %>
+    <%= f.label :contact_number, 'Contact Number', class: "skinny_label" %><br>
+    <%= f.telephone_field :contact_number, class: "form-control" %><br>
 
-    <%= f.label 'contact', 'Contact Number', class: "skinny_label" %><br>
-    <%= f.telephone_field :phone, class: "form-control" %><br>
+    <%= f.label :address, class: "skinny_label" %><br>
+    <%= f.text_field :address, class: "form-control"%><br>
+
+    <%= f.label :city, class: "skinny_label" %><br>
+    <%= f.text_field :city, class: "form-control"%><br>
+
+    <%= f.label :state, class: "skinny_label" %><br>
+    <%= f.text_field :state, class: "form-control"%><br>
+
+    <%= f.label :zipcode, class: "skinny_label" %><br>
+    <%= f.number_field :zipcode, max: 99999,class: "form-control"%><br>
+
+    <%= f.label :date_of_birth, "Date of Birth", class: "skinny_label" %><br>
+    <%= f.date_field :date_of_birth, max: "1998-01-11", class: "form-control"%><br>
+
+    <%= f.label :gender, class: "skinny_label" %><br>
+    <%= f.radio_button :gender, "Female", checked: "checked", :class => 'radio-inline' %> Female <br>
+    <%= f.radio_button :gender, "Male", :class => 'radio-inline' %> Male <br>
+
+    <%= f.label :doc_name, 'Physician Name', class: "skinny_label" %><br>
+    <%= f.text_field :doc_name, class: 'form-control' %>
+
+    <%= f.label :doc_address, 'Physician Address', class: "skinny_label" %><br>
+    <%= f.text_field :doc_address, class: 'form-control' %>
+
+    <%= f.label :doc_city, 'Physician: City, State, Zipcode', class: "skinny_label" %><br>
+    <%= f.text_field :doc_city, class: 'form-control' %>
+
+    <%= f.label :doc_phone, 'Physician Telephone', class: "skinny_label" %><br>
+    <%= f.text_field :doc_phone, class: 'form-control' %>
+
+    <%= f.label :contact_name, 'Emergency Contact Name', class: "skinny_label" %><br>
+    <%= f.text_field :contact_name, class: 'form-control' %>
+
+    <%= f.label :contact_number, 'Emergency Contact Telephone', class: "skinny_label" %><br>
+    <%= f.text_field :contact_number, class: 'form-control' %>
+
+
+    <%= f.label :contact_address, 'Emergency Contact Address', class: "skinny_label" %><br>
+    <%= f.text_field :contact_address, class: 'form-control' %>
+
+    <%= f.label :contact_city, 'Emergency Contact City, State, Zipcode', class: "skinny_label" %><br>
+    <%= f.text_field :contact_city, class: 'form-control' %>
+
+    <%= f.label :allergies, 'List any allergies you have, including allergies to medications, and allergies to any topical solutions used by SOH. I have advised the artist of any   allergies to metals, latex gloves, soaps and medications. I acknowledge it is not reasonably possible for the artist to determine whether I might have   an allergic reaction to the process involved with the piercing and further acknowledge that such a reaction is possible.', class: "skinny_label" %><br>
+    <%= f.text_area :allergies, class: 'form-control' %>
+
+    <%= f.label :disorder,'Do you have a history of Bleeding disorder?' %>
+    <%= f.text_area :disorder, class: 'form-control'  %><br>
+
+    <%= f.label :body_part,'Body part pierced?' %><br>
+    <%= f.text_field :body_part, class: 'form-control' , placeholder: "What are you getting pierced?" %><br>
+
+    <%= f.label :placement,'Placement?' %><br>
+    <%= f.text_field :placement, class: 'form-control' %><br>
+
+    <%= f.label :implications,'Description of any implications during Piercing procedure?' %><br>
+    <%= f.text_area :implications, class: 'form-control' %>
+
+    <label>
+      1) A brief description of my piercing procedure; 2) Any precautions for me to take before my piercing; 3) A description of the risks and possible consequences of body piercing services; 4) Instructions for care and restrictions following my piercing;
+    </label><br>
+
+    <%= f.text_field :sign, class: 'form-control', placeholder: "Please write your full legal name" %><br>
 
     <%= f.submit "Submit", class: "btn btn-info" %>
   <% end %>
