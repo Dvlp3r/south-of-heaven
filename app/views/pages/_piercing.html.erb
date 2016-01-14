@@ -8,8 +8,11 @@
   </p>
     <%= f.text_field :name, class: 'form-control', placeholder: 'Your Name' %><br>
 
-    <%= f.label :contact_number, 'Contact Number', class: "skinny_label" %><br>
-    <%= f.telephone_field :contact_number, class: "form-control" %><br>
+    <%= f.label :email, class: "skinny_label" %><br>
+    <%= f.email_field :email, class: "form-control" %><br>
+
+    <%= f.label :phone, 'Phone Number', class: "skinny_label" %><br>
+    <%= f.telephone_field :phone, class: "form-control" %><br>
 
     <%= f.label :address, class: "skinny_label" %><br>
     <%= f.text_field :address, class: "form-control"%><br>

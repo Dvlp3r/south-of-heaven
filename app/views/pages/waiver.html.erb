@@ -41,7 +41,7 @@
         <h4 class="modal-title" id="myModalLabel">Piercing Waiver</h4>
       </div>
       <div class="modal-body">
-        <%= render "piercing" %>
+        <%= render "pages/piercing", :locals => {:piercing => Piercing.new} %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -59,7 +59,7 @@
         <h4 class="modal-title" id="myModalLabel">Tattoo Waiver</h4>
       </div>
       <div class="modal-body">
-        <%= render "tattoo" %>
+        <%= render "pages/tattoo", :locals => {:piercing => Piercing.new}  %>
 			</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

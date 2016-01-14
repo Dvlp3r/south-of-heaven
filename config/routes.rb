@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   post 'piercing', to: 'piercings#create', as: 'piercing_waiver'
 
   post 'tattoo', to: 'tattoos#create', as: 'tattoo_waiver'
-
+  get 'tattoo', to: 'pages#waiver'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,3 +1,80 @@
+<div class="container" style="margin : 2em;">
+  <h1 style="text-align: center;">South of Heaven Tattoo Piercing Waiver</h1>
+  <p>Body Piercing Customer Record SOHTattoo requires a COPY OF THE CUSTOMERS ID</p>
+  <p>
+    I release all rights to PHOTOGRAPH – for advertising purposed in print, electronic form or exhibition. This studio has an online live auto feed.
+  </p>
+  <p>
+    This form is complying with the record-keeping requirements of Chapter 64E-19, FAC and needs to be completed before service can be rendered.
+  </p>
+  <p>
+    SOHTattoo DOES NOT PIERCE ANYONE UNDER THE AGE OF 18 NO EXCEPTIONS
+  </p>
+  <table style="width: 90%; margin: 0 auto;">
+    <tr>
+      <td>
+        <h4>Customer Information</h4>
+        <ul style="list-style-type: none;padding:0; margin:0; float: left;">
+          <li>Customer Name: <span style="text-decoration: underline;"><%= @piercing_waiver.name %></span></li>
+          <li>Contact Number: <span style="text-decoration: underline;"><%= @piercing_waiver.contact_number %></span></li>
+          <li>Adress: <br>
+            <span style="text-decoration: underline;"><%= "#{@piercing_waiver.address} #{@piercing_waiver.city} #{@piercing_waiver.state} #{@piercing_waiver.zipcode}" %></span></li>
+          <li>Date of Birth: <span style="text-decoration: underline;"><%= @piercing_waiver.date_of_birth %></span></li>
+          <li>Gender: <span style="text-decoration: underline;"><%= @piercing_waiver.gender %></span></li>
+        </ul>
+      </td>
+      <td>
+        <h4>Emergency Contact Information</h4>
+        <ul style="list-style-type: none;padding:0; margin:0;">
+          <li>Physician Name: <span style="text-decoration: underline;"><%= @piercing_waiver.doc_name %></span></li>
+          <li>Physician Adress:<br>
+             <span style="text-decoration: underline;"><%= "#{@piercing_waiver.doc_address} #{@piercing_waiver.doc_city}" %></span></li>
+          <li>Physician Telephone: <span style="text-decoration: underline;"><%= @piercing_waiver.doc_phone %></span></li>
+          <li>Emergency Contact Name: <span style="text-decoration: underline;"><%= @piercing_waiver.contact_name %></span></li>
+          <li>Emergency Contact Telephone: <span style="text-decoration: underline;"><%= @piercing_waiver.contact_number %></span></li>
+          <li>Emergency Contact Address: <br>
+             <span style="text-decoration: underline;"><%= "#{@piercing_waiver.contact_address} #{@piercing_waiver.contact_city}" %></span></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    List any allergies you have, including allergies to medications, and allergies to any topical solutions used by SOH. I have advised the artist of any allergies to metals, latex gloves, soaps and medications. I acknowledge it is not reasonably possible for the artist to determine whether I might have an allergic reaction to the process involved with the piercing and further acknowledge that such a reaction is possible.
+  </p>
+  <span><%= @piercing_waiver.allergies %></span>
+
+  <p>
+    History of Bleeding disorder <br>
+    <span><%= @piercing_waiver.disorder %></span>
+  </p>
 
 
-  <%= debug @piercing_waiver %>
+  <ul style="list-style-type: none;padding:0; margin:0;">
+    <li>Body part getting pierced: <span style="text-decoration: underline;"><%= @piercing_waiver.body_part %></span></li>
+    <li>Placement: <span style="text-decoration: underline;"><%= @piercing_waiver.placement %></span></li>
+  </ul>
+
+  <p>
+    <strong>Implications</strong> <br>
+    <span><%= @piercing_waiver.implications %></span>
+  </p>
+
+  <p>
+    <strong>1) A brief description of my piercing procedure; 2) Any precautions for me to take before my piercing; 3) A description of the risks and possible consequences of body piercing services; 4) Instructions for care and restrictions following my piercing;</strong><br>
+    <table style="width: 65%;">
+      <tr>
+        <td style="margin: 5px;">
+          Please write your full legal name <br><br><br>
+
+          &#10005;_________________
+        </td>
+        <td>
+          Signature:<br><br><br>
+
+          &#10005;_________________
+        </td>
+      </tr>
+    </table>
+  </p>
+</div>

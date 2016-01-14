@@ -9308,7 +9308,7 @@ a.label:focus {
 --------------------------------------------------------------*/
 .alert {
   padding: 1.0344827586206897em;
-  margin-bottom: 1.5862068965517242em;
+  margin-bottom: 0em;
   border: 1px solid transparent;
   border-radius: 3px;
 }
