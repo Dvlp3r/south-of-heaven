@@ -25,9 +25,9 @@
             <li style="display: inline;"><%= artist.bio %></li><br>
             <br>
             <% if current_user %>
-              <li style="display: inline;"><%= artist.name %> - <%= link_to 'Edit', edit_artist_path(artist) %>&#160</li>
-              <li style="display: inline;"><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %>&#160</li>
-              <li style="display: inline;"><%= link_to 'Show', artist %>&#160</li>
+              <li style="display: inline;"><%= artist.name %> - <%= link_to 'Edit', edit_artist_path(artist), class: "crud" %>&#160</li>
+              <li style="display: inline;"><%= link_to 'Destroy', artist, class: "crud", method: :delete, data: { confirm: 'Are you sure?' } %>&#160</li>
+              <li style="display: inline;"><%= link_to 'Show', artist, class: "crud" %>&#160</li>
             <% end %>
           </ul>
         </div>
@@ -53,5 +53,5 @@
 <br>
 
 <% if user_signed_in? %>
-  <%= link_to 'New Artist', new_artist_path %>
+  <%= link_to 'New Artist', new_artist_path, class: "crud" %>
   <% end %>

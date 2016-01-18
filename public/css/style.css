@@ -20657,3 +20657,7 @@ img.grayscale:hover {
 .empty-space-90 {
   height: 90px;
 }
+/*-----------------------CRUD Links--------------------------------*/
+.crud {
+  color: red;  
+}

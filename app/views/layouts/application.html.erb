@@ -64,11 +64,6 @@
             						<div class="topbar-info">
             							<a href="callto:3054511200"><i class="fa fa-phone"></i>(305) 451-1200</a>
 
-            							<!-- <a href="mailto:info@domain.com">
-            								<i class="fa fa-envelope-o"></i>
-            								<span>sohink1@yahoo.com</span>
-            							</a> -->
-
             						</div>
             					</div>
 							</div>
@@ -107,24 +102,22 @@
 														</h3>
 														<ul class="dropdown-menu">
 															<li><a href="/">Home</a></li>
-															<li><a href="/piercing">Piercing</a></li>
                               <li><a href="/contact">Contact Us</a></li>
-															<li><a href="/">Blog</a></li>
 															<li><a href="#">Live Feed</a></li>
 															<li><a href="/waiver">Waivers</a></li>
 
-														  <% if user_signed_in? %>
+														  <!-- <%# if user_signed_in? %>
 														  <li>
-														  	Logged in as <strong><%= current_user.email %></strong>.
-														    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-														    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+														  	Logged in as <strong><%# current_user.email %></strong>.
+														    <%# link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+														    <%# link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 														  </li>
 														  <li>
-															  <% else %>
-															    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-															    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-															  <% end %>
-															</li>
+															  <%# else %>
+															    <%# link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+															    <%# link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+															  <%# end %>
+															</li> -->
 
 														</ul>
 													</li>
@@ -136,7 +129,7 @@
 													<i class="navicon elegant_icon_profile"></i>
 													<span class="underline">Artists</span> <span class="caret"></span>
 												</a>
-												<ul class="dropdown-menu">
+												<ul class="dropdown-menu" style="height: auto;">
 													<li class="menu-item-has-children mega-col-4 dropdown-submenu">
 														<h3 class="megamenu-title">Artists <span class="caret"></span></h3>
 														<ul class="dropdown-menu">
@@ -153,7 +146,7 @@
 														<div class="megamenu-sidebar">
                               <% art = artists.sample %>
                               <% unless art == nil %>
-                                <%= link_to image_tag(art.pic), artist_path(art), style: "float:left; margin:1vw;" %>
+                                <%= link_to image_tag(art.pic), artist_path(art), style: "float:left; margin:1vw; display: block; max-width:7vw; max-height:7vh; width: auto; height: auto;" %>
                                 <%= art.bio %>
                               <% end %>
 														</div>
@@ -191,8 +184,7 @@
 									<div class="textwidget">
 										<p>
 											<img src="/images/footer-logo-white.png" alt="" width="150" />
-											<br /><br />
-											We have provided a beautiful Gallery setting, comfortable seating with music or cable entertainment and would hope that you and your family come and visit our family for your next piece of art.
+											<br /><br />&nbsp; South Of Heaven Tattoo
 											<br />
 
 										</p>
@@ -259,8 +251,8 @@
 							</div>
 							<div class="footer-widget-col col-md-3 col-sm-6">
 								<div class="widget tweets-widget">
-									<h3 class="widget-title">
-										<span>Latest Tweets</span>
+									<h3>
+										<span></span>
 									</h3>
 									<!-- <div class="recent-tweets">
 										<ul>
@@ -288,10 +280,10 @@
 									</h3>
 									<div class="textwidget">
 										<p>
-											<i class="fa fa-home"></i>South of Heaven Inc | Key Largo, Fl<br><br />
-											<i class="fa fa-phone"></i>(305) 451-1200<br><br />
-											<!-- <i class="fa fa-envelope"></i>
-											<a href="mailto:info@domain.com"><i class="fa fa-envelope-o"></i><span>sohink1@yahoo.com</span></a> -->
+											<i class="fa fa-home"></i>&nbsp South of Heaven Inc | Key Largo, Fl<br><br />
+											<i class="fa fa-phone"></i>&nbsp (305) 451-1200<br><br />
+                      <i class="fa fa-map-marker"></i>&nbsp The Pink Plaza, <br>
+                      &nbsp &nbsp 103400 Overseas Hwy #104, <br> &nbsp &nbsp Key Largo, FL 33037<br>
 										</p>
 									</div>
 								</div>
