@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SouthOfHeaven | Key Largo, Fl</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -95,16 +98,12 @@
 													<i class="navicon elegant_icon_house_alt"></i>
 													<span class="underline">Menu</span> <span class="caret"></span>
 												</a>
-												<ul class="dropdown-menu">
-													<li class="mega-col-6 dropdown-submenu">
-														<h3 class="megamenu-title">
-															South Of Heaven <span class="caret"></span>
-														</h3>
-														<ul class="dropdown-menu">
-															<li><a href="/">Home</a></li>
-                              <li><a href="/contact">Contact Us</a></li>
-															<li><a href="#">Live Feed</a></li>
-															<li><a href="/waiver">Waivers</a></li>
+												<ul class="dropdown-menu mega-col-6">
+                          <li><a href="/">Home</a></li>
+                          <li><a href="/contact">Contact Us</a></li>
+                          <li><a href="#">Live Feed</a></li>
+                          <li><a href="/waiver">Waivers</a></li>
+
 
 														  <!-- <%# if user_signed_in? %>
 														  <li>
@@ -119,8 +118,6 @@
 															  <%# end %>
 															</li> -->
 
-														</ul>
-													</li>
 												</ul>
 											</li>
 
@@ -129,18 +126,16 @@
 													<i class="navicon elegant_icon_profile"></i>
 													<span class="underline">Artists</span> <span class="caret"></span>
 												</a>
-												<ul class="dropdown-menu" style="height: auto;">
-													<li class="menu-item-has-children mega-col-4 dropdown-submenu">
+												<ul class="dropdown-menu mega-col-4" style="height: auto;">
+													<!-- <li class="menu-item-has-children mega-col-4 dropdown-submenu">
 														<h3 class="megamenu-title">Artists <span class="caret"></span></h3>
-														<ul class="dropdown-menu">
+														<ul class="dropdown-menu"> -->
 															<li><a href="/artists">View All</a></li>
                               <% artists.each do |artist| %>
                                 <li>
                                   <%= link_to artist.name, artist %>
                                 </li>
                               <% end %>
-														</ul>
-													</li>
 
 													<li class="visible-lg-inline mega-col-4">
 														<div class="megamenu-sidebar">
