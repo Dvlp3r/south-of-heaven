@@ -20749,6 +20749,9 @@ img.grayscale:hover {
   margin: auto;
 }
 
+#artist-text {
+  color: black;
+}
 /*-----------------------CRUD Links--------------------------------*/
 .crud {
   color: red;

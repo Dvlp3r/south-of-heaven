@@ -101,7 +101,7 @@
 												<ul class="dropdown-menu">
                           <li><a href="/">Home</a></li>
                           <li><a href="/contact">Contact Us</a></li>
-                          <li><a href="#">Live Feed</a></li>
+                          <li><a href="http://ax9677.myfoscam.org:8081/videostream.cgi?user=guest&pwd=">Live Feed</a></li>
                           <li><a href="/waiver">Waivers</a></li>
 												</ul>
 											</li>
@@ -126,7 +126,7 @@
 							                </ul>
                             </li>
 													<li class="visible-lg-inline mega-col-8">
-														<div class="megamenu-sidebar">
+														<div class="megamenu-sidebar" id="artist-text">
                               <% art = artists.sample %>
                               <% unless art == nil %>
                                 <%= link_to image_tag(art.pic), artist_path(art), style: "float:left; margin:1vw; display: inline-table; max-width:7vw; max-height:7vh; width: auto; height: auto;" %>
@@ -293,8 +293,7 @@
 	            			    <div class="col-sm-6">
 	            					<div class="footer-menu">
 										<ul class="footer-nav">
-											<li><a title="About Us" href="#">About Us</a></li>
-											<li><a title="FAQ" href="#">FAQ</a></li>
+											<li><a title="About Us" href="/contact">About Us</a></li>
 											<li><a title="Privacy Policy" href="/waiver">Waivers</a></li>
 
 										</ul>
