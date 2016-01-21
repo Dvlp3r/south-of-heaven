@@ -20748,3 +20748,12 @@ img.grayscale:hover {
 #tattooModal {
   margin: auto;
 }
+
+/*-----------------------CRUD Links--------------------------------*/
+.crud {
+  color: red;
+}
+
+.left-pad {
+  padding-left: 1em;
+}

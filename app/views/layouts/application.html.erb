@@ -93,12 +93,12 @@
 									</div>
 									<nav class="collapse navbar-collapse primary-navbar-collapse">
 										<ul class="nav navbar-nav primary-nav">
-											<li class="menu-item-has-children megamenu dropdown active">
+											<li class="menu-item-has-children dropdown active">
 												<a title="Home" href="/" class="dropdown-hover">
 													<i class="navicon elegant_icon_house_alt"></i>
 													<span class="underline">Menu</span> <span class="caret"></span>
 												</a>
-												<ul class="dropdown-menu mega-col-6">
+												<ul class="dropdown-menu">
                           <li><a href="/">Home</a></li>
                           <li><a href="/contact">Contact Us</a></li>
                           <li><a href="#">Live Feed</a></li>
@@ -107,26 +107,29 @@
 											</li>
 
 											<li class="menu-item-has-children megamenu megamenu-fullwidth dropdown active">
-												<a title="Shop" href="/artists" class="dropdown-hover">
+												<a title="Artits" href="/artists" class="dropdown-hover">
 													<i class="navicon elegant_icon_profile"></i>
 													<span class="underline">Artists</span> <span class="caret"></span>
 												</a>
-												<ul class="dropdown-menu mega-col-4" style="height: auto;">
-													<!-- <li class="menu-item-has-children mega-col-4 dropdown-submenu">
-														<h3 class="megamenu-title">Artists <span class="caret"></span></h3>
-														<ul class="dropdown-menu"> -->
-															<li><a href="/artists">View All</a></li>
-                              <% artists.each do |artist| %>
-                                <li>
-                                  <%= link_to artist.name, artist %>
-                                </li>
-                              <% end %>
-
-													<li class="visible-lg-inline mega-col-4">
+												<ul class="dropdown-menu" style="height: auto;">
+													 <li class="menu-item-has-children mega-col-4">
+														<h3 class="megamenu-title">
+                              Artists <span class="caret"></span>
+                            </h3>
+							                <ul class="dropdown-menu mega-col-4">
+                                <li><a href="/artists">View All</a></li>
+                                <% artists.each do |artist| %>
+                                  <li>
+                                    <%= link_to artist.name, artist %>
+                                  </li>
+                                <% end %>
+							                </ul>
+                            </li>
+													<li class="visible-lg-inline mega-col-8">
 														<div class="megamenu-sidebar">
                               <% art = artists.sample %>
                               <% unless art == nil %>
-                                <%= link_to image_tag(art.pic), artist_path(art), style: "float:left; margin:1vw; display: block; max-width:7vw; max-height:7vh; width: auto; height: auto;" %>
+                                <%= link_to image_tag(art.pic), artist_path(art), style: "float:left; margin:1vw; display: inline-table; max-width:7vw; max-height:7vh; width: auto; height: auto;" %>
                                 <%= art.bio %>
                               <% end %>
 														</div>
