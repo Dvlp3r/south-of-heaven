@@ -11464,13 +11464,13 @@ a[data-toggle="tooltip"]:hover {
   z-index: 1;
 }
 .dhslider .slide-bg-1 {
-  background-image:url(../images/slideshow/slider-1.jpg);
+  background-image:url(../images/bg_2.jpg);
 }
 .dhslider .slide-bg-2 {
-  background-image:url(../images/slideshow/drops.png);
+  background-image:url(../images/bg_3.jpeg);
 }
 .dhslider .slide-bg-3 {
-  background-image:url(../images/slideshow/slider-2.jpg);
+  background-image:url(../images/tattoo.jpg);
 }
 .dhslider .slider-overlay {
   position: absolute;
