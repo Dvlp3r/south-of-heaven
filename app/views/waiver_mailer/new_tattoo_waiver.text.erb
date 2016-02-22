@@ -38,10 +38,26 @@
     </tr>
 
   </table>
-    <p>
-      <strong>By checking the following boxes you are agreeing to the terms in which they set.</strong><br>
-      <%= @tattoo_waiver.emergency %>
-    </p>
+
+  <p>
+    <em>Emergency Contact information</em><br>
+  </p>
+    <table style="border: 1px solid black;">
+      <tbody>
+        <tr>
+          <td>
+            Emergency Contact:<span style="text_decoration: underline;">
+              <%= @tattoo_waiver.emergency_contact %>
+            </span>
+          </td>
+          <td>
+            Emergency Contact:<span style="text_decoration: underline;">
+              <%= @tattoo_waiver.emergency_contact %>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
     <p>
       <strong>By checking the following boxes you are agreeing to the terms in which they set.</strong>

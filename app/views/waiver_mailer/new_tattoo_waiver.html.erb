@@ -24,7 +24,7 @@
           <% group.compact.each do |condition| %>
               <ul style="list-style-type: none;padding:0; margin:0;">
                 <li>
-                  _<span style="text_decoration: underline;">&#10004;</span>_<%= condition %>
+                  <span style="text_decoration: underline;">&#10004;</span><%= condition %>
                 </li>
               </ul>
 
@@ -37,8 +37,21 @@
 
       <p>
         <em>Emergency Contact information</em><br>
-        <%= @tattoo_waiver.emergency %>
       </p>
+        <table style="width:100%;border: 1px solid black;">
+          <tbody>
+            <tr>
+              <td>
+                Emergency Contact:
+                <span style="text-decoration: underline;"><%= @tattoo_waiver.emergency_contact %></span>
+              </td>
+              <td>
+                Emergency phone:
+                <span style="text-decoration: underline;"><%= @tattoo_waiver.emergency_phone %></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
       <p>
         <strong>By checking the following boxes you are agreeing to the terms in which they set.</strong>
@@ -136,7 +149,7 @@
   <p>
     <strong>I Hereby give consent to SOHTattoo to perform the procedures that I have requested</strong>
   </p>
-  <table style="border: 1px solid black;">
+  <table style="width:100%;border: 1px solid black;">
     <tbody>
       <tr>
         <td>
@@ -145,8 +158,6 @@
         <td>
           Age: <span style="text-decoration: underline;"><%= @tattoo_waiver.age %></span>
         </td>
-      </tr>
-      <tr>
         <td>
           DOB: <span style="text-decoration: underline;"><%= @tattoo_waiver.bday %></span>
         </td>
@@ -178,5 +189,3 @@
 
 Tattoo Artist Signature ________________________________
 Amount $_________________
-
-<%= debug @tattoo_waiver %>

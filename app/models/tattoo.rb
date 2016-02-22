@@ -4,9 +4,9 @@ class Tattoo
   include ActiveModel::Validations
 
   attr_accessor :name, :health_conditions, :reaction, :drugs, :permanent, :infection,
-                :harmless, :verified, :age, :bday, :contact, :emergency, :email
+                :harmless, :verified, :age, :bday, :contact, :emergency_contact, :emergency_phone, :email
 
-  validates :emergency,:name, :email, presence: true
+  validates :emergency_contact, :emergency_phone, :name, :email, presence: true
 
   validates :email, length: {maximum: 255 },
                     format: {with: Devise::email_regexp}
