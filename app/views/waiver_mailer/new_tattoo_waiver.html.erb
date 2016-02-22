@@ -1,138 +1,182 @@
 <div class="container" style="margin: 2em;">
-  <h1 style="text-align: center;">South of Heaven Tattoo</h1>
-  <p>
-    South of Heaven Tattoo requires a Copy of the Customers ID
-  </p>
+  <h3>South of Heaven Tattoo requires a Copy of the Customers ID</h3>
   <p>
     I release all rights to Photograph- for advertising purposes in
-    print, electronic form or exhibition. This studio has an online, live auto feed.
-  </p>
-  <p>
+    print, electronic form or exhibition.<span style="font-size: larger;">This studio has an online, live auto feed.</span><br>
     I acknowledge by signing this Release I have been given the full
     opportunity to ask any and all questions which I might have about
     obtaining a tattoo from South of Heaven Tattoo (SOHT) and all my
     questions have been answered to my full and total satisfaction.
-  </p>
-  <p>
     I acknowledge I have been advised of the matters set forth below and I agree as follows:
   </p>
-  <p>
+  <p style="font-size: 1.2em;font-style: italic;font-weight: 600;">
     This information is required by the Florida Health Department please fill it out completely.
   </p>
 
   <p>
-    <strong>The following health conditions apply</strong>
+    <em>Please check any conditions apply</em>
   </p>
 
-  <table style="width:100%">
+  <table style="width:100%;border: 1px solid black;">
     <tr>
-      <td>
-        <ul style="list-style-type: none;padding:0; margin:0;">
-          <% @tattoo_waiver.health_conditions.each do |condition| %>
-              <li>
-                <%= condition unless condition == "0" %>
-              </li>
+      <% @tattoo_waiver.health_conditions.reject {|word| word == "0"}.in_groups_of(4) do |group| %>
+        <td>
+          <% group.compact.each do |condition| %>
+              <ul style="list-style-type: none;padding:0; margin:0;">
+                <li>
+                  _<span style="text_decoration: underline;">&#10004;</span>_<%= condition %>
+                </li>
+              </ul>
+
           <% end %>
-        </ul>
-      </td>
-      <td>
-        <ul style="list-style-type: none;padding:0; margin:0;">
-          <% @tattoo_waiver.health_problems.each do |condition| %>
-              <li>
-                <%= condition unless condition == "0" %>
-              </li>
-          <% end %>
-      </td>
+        </td>
+        <% end %>
     </tr>
-
   </table>
-    <p>
-      <strong>By checking the following boxes you are agreeing to the terms in which they set.</strong><br>
-      <%= @tattoo_waiver.emergency %>
-    </p>
 
-    <p>
-      <strong>By checking the following boxes you are agreeing to the terms in which they set.</strong>
-    </p>
-    <p>
-      <span style="float: left;">
-        <% if @tattoo_waiver.reaction %>
-          &#10004;
-        <% else %>
-          &#10008;
-        <% end %>
-      </span>
-      &nbsp; I acknowledge it is not reasonably possible for the tattoo artist to determine whether I might have an allergic reaction to the ink or process involved with the tattoo and further acknowledge that such a reaction is possible.
-    </p>
-    <p>
-      <span style="float: left;">
-        <% if @tattoo_waiver.drugs %>
-          &#10004;
-        <% else %>
-          &#10008;
-        <% end %>
-      </span>
-      &nbsp; I am not under the influence of drugs or alcohol. To my knowledge, I do not have any physical, mental or medical impairment or disability which might affect my well-being as a direct or indirect result to have a tattoo done at this thime.
-    </p>
-    <p>
-      <span style="float: left;">
-        <% if @tattoo_waiver.permanent %>
-          &#10004;
-        <% else %>
-          &#10008;
-        <% end %>
-      </span>
-      &nbsp; I acknowledge that a tattoo is a permanent change to my appearance and that no representation have been made to me as to the ability to later change or remove my tattoo.
-    </p>
-    <p>
-      <span style="float: left;">
-        <% if @tattoo_waiver.infection %>
-          &#10004;
-        <% else %>
-          &#10008;
-        <% end %>
-      </span>
-      &nbsp;I acknowledge infection is always possible as a result of obtaining a tattoo.  I have received aftercare instructions and I agree to follow all of them while my tattoo is healing. I agree that any and all follow up work needed due to my own negligence will be competed at my own expense.
-    </p>
-    <p>
-      <span style="float: left;">
-        <% if @tattoo_waiver.harmless %>
-          &#10004;
-        <% else %>
-          &#10008;
-        <% end %>
-      </span>
-      &nbsp;I agree to release and forever discharge and hold harmless the tattoo artist and  hold harmless the tattoo artist and SOHT from any and all claims, damages, or legal actions arising from or connected in any way with my tattoo, or the procedure used in completing my tattoo.
-    </p>
-    <p>
-      <span style="float: left;">
-        <% if @tattoo_waiver.verified %>
-          &#10004;
-        <% else %>
-          &#10008;
-        <% end %>
-      </span>
-      &nbsp;I have Verified: SIZE, PLACEMENT, SPELLING and DESIGN.
-    </p>
 
+      <p>
+        <em>Emergency Contact information</em><br>
+        <%= @tattoo_waiver.emergency %>
+      </p>
+
+      <p>
+        <strong>By checking the following boxes you are agreeing to the terms in which they set.</strong>
+      </p>
+
+      <table style="border: 1px solid black;">
+        <tbody>
+          <tr>
+            <td>
+              <span style="float: left;">
+                <% if @tattoo_waiver.reaction == "yes" %>
+                <span style="text_decoration: underline;">&#10004;</span>
+                <% else %>
+                  ____
+                <% end %>
+              </span>
+              &nbsp; I acknowledge it is not reasonably possible for the tattoo artist to determine whether I might have an allergic reaction to the ink or process involved with the tattoo and further acknowledge that such a reaction is possible.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="float: left;">
+                <% if @tattoo_waiver.drugs == "yes" %>
+                <span style="text_decoration: underline;">&#10004;</span>
+                <% else %>
+                  ____
+                <% end %>
+              </span>
+              &nbsp; I am not under the influence of drugs or alcohol. To my knowledge, I do not have any physical, mental or medical impairment or disability which might affect my well-being as a direct or indirect result to have a tattoo done at this thime.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="float: left;">
+                <% if @tattoo_waiver.drugs == "yes" %>
+                <span style="text_decoration: underline;">&#10004;</span>
+                <% else %>
+                  ____
+                <% end %>
+              </span>
+              &nbsp; I am not under the influence of drugs or alcohol. To my knowledge, I do not have any physical, mental or medical impairment or disability which might affect my well-being as a direct or indirect result to have a tattoo done at this thime.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="float: left;">
+                <% if @tattoo_waiver.permanent == "yes" %>
+                <span style="text_decoration: underline;">&#10004;</span>
+                <% else %>
+                ____
+                <% end %>
+              </span>
+              &nbsp; I acknowledge that a tattoo is a permanent change to my appearance and that no representation have been made to me as to the ability to later change or remove my tattoo.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="float: left;">
+                <% if @tattoo_waiver.infection == "yes" %>
+                <span style="text_decoration: underline;">&#10004;</span>
+                <% else %>
+                  ____
+                <% end %>
+              </span>
+              &nbsp;I acknowledge infection is always possible as a result of obtaining a tattoo.  I have received aftercare instructions and I agree to follow all of them while my tattoo is healing. I agree that any and all follow up work needed due to my own negligence will be competed at my own expense.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="float: left;">
+                  <% if @tattoo_waiver.harmless == "yes" %>
+                  <span style="text_decoration: underline;">&#10004;</span>
+                  <% else %>
+                    ____
+                  <% end %>
+                </span>
+                &nbsp;I agree to release and forever discharge and hold harmless the tattoo artist and  hold harmless the tattoo artist and SOHT from any and all claims, damages, or legal actions arising from or connected in any way with my tattoo, or the procedure used in completing my tattoo.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="float: left;">
+                <% if @tattoo_waiver.verified == "yes" %>
+                  <span style="text_decoration: underline;">&#10004;</span>
+                <% else %>
+                  ____
+                <% end %>
+              </span>
+              &nbsp;I have Verified: SIZE, PLACEMENT, SPELLING and DESIGN.
+            </td>
+          </tr>
+    </tbody>
   </table>
+
   <p>
     <strong>I Hereby give consent to SOHTattoo to perform the procedures that I have requested</strong>
   </p>
-  <table style="width: 75%; margin: 0;">
-    <tr>
-      <td>
-        Sign Here: <br><br><br>
-        &#10005;_______________________________________
-      </td>
-      <td>
-        <ul style="list-style-type: none;padding:0; margin:0; float: right;">
-          <li>Customer Name: <span style="text-decoration: underline;"><%= @tattoo_waiver.name %></span></li>
-          <li>Age: <span style="text-decoration: underline;"><%= @tattoo_waiver.age %></span></li>
-          <li>Date of Birth: <span style="text-decoration: underline;"><%= @tattoo_waiver.bday %></span></li>
-          <li>Phone: <span style="text-decoration: underline;"><%= @tattoo_waiver.contact %></span></li>
-        </ul>
-      </td>
-    </tr>
+  <table style="border: 1px solid black;">
+    <tbody>
+      <tr>
+        <td>
+          Date:_____________________________
+        </td>
+        <td>
+          Age: <span style="text-decoration: underline;"><%= @tattoo_waiver.age %></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          DOB: <span style="text-decoration: underline;"><%= @tattoo_waiver.bday %></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Customer Name: <span style="text-decoration: underline;"><%= @tattoo_waiver.name %></span>
+        </td>
+        <td>
+          Contact Number: <span style="text-decoration: underline;"><%= @tattoo_waiver.contact %></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Design:_______________________________
+        </td>
+        <td>
+          Placement:____________________________
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Signature:
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
+
+Tattoo Artist Signature ________________________________
+Amount $_________________
+
+<%= debug @tattoo_waiver %>

@@ -35,14 +35,6 @@
           <% end %>
         </ul>
       </td>
-      <td>
-        <ul style="list-style-type: none;padding:0; margin:0;">
-          <% @tattoo_waiver.health_problems.each do |condition| %>
-              <li>
-                <%= condition unless condition == "0" %>
-              </li>
-          <% end %>
-      </td>
     </tr>
 
   </table>

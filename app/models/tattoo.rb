@@ -4,7 +4,7 @@ class Tattoo
   include ActiveModel::Validations
 
   attr_accessor :name, :health_conditions, :reaction, :drugs, :permanent, :infection,
-                :harmless, :verified, :age, :bday, :contact, :emergency, :health_problems, :email
+                :harmless, :verified, :age, :bday, :contact, :emergency, :email
 
   validates :emergency,:name, :email, presence: true
 

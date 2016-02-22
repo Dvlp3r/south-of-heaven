@@ -21,17 +21,12 @@
 
   <%= f.label :health_conditions, "Do any of the following health conditions apply?" %><br>
 
-  <% %w[ Diabetes Epilepsy Tuberculosis Hepatitis HIV/AIDS Hemophilia  Scarring/Keloiding Pregnant Heart\ Condition Eczema/Psoriasis].each do |condition| %>
+  <% %w[ Diabetes Epilepsy Tuberculosis Hepatitis HIV/AIDS Hemophilia  Scarring/Keloiding Pregnant Heart\ Condition Eczema/Psoriasis Herpes Nursing  Blood\ thinners Hypogylcemia Asthma High\ or\ Low\ Blood\ Pressure Allergic\ to\ metals           Allergic\ to\ latex\ gloves  Allergic\ to\ soaps Allergic\ to\ medications].each do |condition| %>
 
     <%= f.check_box :health_conditions, {multiple: true}, "#{condition}" %>
     <%= f.label :health_conditions, "#{condition}", class: "check_box-inline small_label skinny_label" %>
     <br>
     <% end %>
-
-  <% %w[Herpes Nursing  Blood\ thinners Hypogylcemia Asthma High\ or\ Low\ Blood\ Pressure Allergic\ to\ metals           Allergic\ to\ latex\ gloves  Allergic\ to\ soaps Allergic\ to\ medications].each do |problem| %>
-    <%= f.check_box :health_problems, {multiple: true}, "#{problem}" %>
-    <%= f.label :health_problems, "#{problem}", class: "check_box-inline small_label skinny_label" %><br>
-  <% end %>
 
   <br>
   <%= label_tag 'Emergency Contact information' %>
