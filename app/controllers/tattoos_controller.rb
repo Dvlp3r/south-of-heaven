@@ -11,7 +11,7 @@ class TattoosController < ApplicationController
         flash[:success] = "Your waiver was sent"
         redirect_to '/'
       else
-        flash[:danger] = "There was a problem sending your waiver"
+        flash[:danger] = "There was a problem sending your waiver. Make sure the waiver includes your name, email, and emergency contact information."
         render 'pages/waiver'
       end
   end

@@ -16,7 +16,12 @@
         Name:<span style="text-decoration: underline;"><%= @piercing_waiver.name %></span>
       </td>
       <td>
-        Telephone#:<span style="text-decoration: underline;"><%= @piercing_waiver.contact_number %></span>
+        Telephone#:
+        <% if @piercing_waiver.contact_number %>
+          <span style="text-decoration: underline;"><%= @piercing_waiver.contact_number %></span>
+        <% else %>
+          _____________
+          <% end %>
       </td>
     </tr>
     <tr>
@@ -30,7 +35,12 @@
     </tr>
     <tr>
       <td>
-        Date of Birth:<span style="text-decoration: underline;"><%= @piercing_waiver.date_of_birth %></span>
+        Date of Birth:
+        <% if @piercing_waiver.date_of_birth %>
+          <span style="text-decoration: underline;"><%= @piercing_waiver.date_of_birth %></span>
+        <% else %>
+          _____________
+          <% end %>
       </td>
       <td>
         Gender:<span style="text-decoration: underline;"><%= @piercing_waiver.gender %></span>

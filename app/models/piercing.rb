@@ -8,7 +8,7 @@ class Piercing
                 :contact_address, :contact_city, :allergies, :disorder, :body_part,
                 :placement, :implications, :sign, :email, :phone
 
-  validates :name, :phone, :date_of_birth, :doc_name, :doc_phone, :contact_name,
+  validates :name, :doc_name, :doc_phone, :contact_name,
             :contact_number, :email, presence: true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
