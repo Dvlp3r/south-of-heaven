@@ -17,7 +17,7 @@
     <em>Please check any conditions apply</em>
   </p>
 
-  <table style="width:100%;border: 1px solid black;">
+  <table style="width:90%;border: 1px solid black;">
     <tr>
       <% @tattoo_waiver.health_conditions.reject {|word| word == "0"}.in_groups_of(4) do |group| %>
         <td>
@@ -38,7 +38,7 @@
       <p>
         <em>Emergency Contact information</em><br>
       </p>
-        <table style="width:100%;border: 1px solid black;">
+        <table style="width:90%;border: 1px solid black;">
           <tbody>
             <tr>
               <td>
@@ -149,7 +149,7 @@
   <p>
     <strong>I Hereby give consent to SOHTattoo to perform the procedures that I have requested</strong>
   </p>
-  <table style="width:100%;border: 1px solid black;">
+  <table style="width:75%;border: 1px solid black;">
     <tbody>
       <tr>
         <td>
@@ -158,9 +158,11 @@
         <td>
           Age: <span style="text-decoration: underline;"><%= @tattoo_waiver.age %></span>
         </td>
-        <td>
-          DOB: <span style="text-decoration: underline;"><%= @tattoo_waiver.bday %></span>
-        </td>
+        <tr>
+          <td>
+            DOB: <span style="text-decoration: underline;"><%= @tattoo_waiver.bday %></span>
+          </td>          
+        </tr>
       </tr>
       <tr>
         <td>
