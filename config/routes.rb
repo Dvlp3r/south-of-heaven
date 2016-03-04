@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     get 'sign_up', :to => 'devise/registrations#new', as: :sign_up
     get 'sign_out', :to => 'devise/sessions#destroy', as: :sign_out
   end
-  resources :artists, only: [:index, :new, :edit, :destroy]
-
+  resources :artists
+  
   root 'pages#index'
 
   get '/oauth/connect' => 'artists#connect'
