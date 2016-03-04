@@ -17,11 +17,12 @@
       <div class="row profile-pic">
         <div class="name">
           <%= link_to artist.name, artist_path(artist) %>
-          <p class="instamodal" id="instafeed_modal"><a href="#instafeed-<%= artist.instagramtag %>" rel="modal:open">See My Work</a></p>
+          <p class="instamodal" id="instafeed_modal"><a href="#instafeed-<%= artist.instagramtag %>" rel="modal:open">Portfolio</a></p>
         </div>
-        <%= image_tag artist.pic %>
         <div class="bio">
+
           <ul style="list-style-type: none;display: inline;">
+            <li><%= image_tag artist.pic %></li>
             <li style="display: inline;"><%= artist.bio %></li><br>
             <br>
             <% if current_user %>
@@ -35,9 +36,9 @@
     </div>
 
     <div id="instafeed-<%= artist.instagramtag %>" class="instafeed" style="display:none;">
-        <p><a href="#" rel="modal:close"></a></p>
         <div class="instafeed-title">
-          <p>#<%= artist.instagramtag %></p>
+          <p><a href="#" rel="modal:close"></a></p>
+          <p class="responsive-tag">#<%= artist.instagramtag %></p>
         </div>
     </div>
 

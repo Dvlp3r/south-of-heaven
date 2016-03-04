@@ -1,7 +1,7 @@
 <script type="text/javascript" src="/js/instafeed.js"></script>
 
 
-  <h1 style="text-align:center;">Artist name: <%= @artist.name %></h1>
+  <h1 style="text-align:center;"> <%= @artist.name %></h1>
 
 
 <div class="bio">
@@ -17,6 +17,6 @@
   <% if user_signed_in? %>
   <%= link_to 'Edit', (edit_artist_path(@artist) if current_user), class: "crud" %> |
   <% end %>
-  
+
   <%= link_to 'Back', artists_path %>
 </div>
