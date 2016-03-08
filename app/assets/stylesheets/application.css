@@ -20741,3 +20741,9 @@ img.grayscale:hover {
 .left-pad {
   padding-left: 1em;
 }
+
+@media (max-width: 768px){
+  .desk-link{
+    display: none;
+  }
+}

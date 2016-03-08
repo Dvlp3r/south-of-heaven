@@ -100,9 +100,9 @@
 												</a>
 												<ul class="dropdown-menu">
                           <li><a href="/">Home</a></li>
-                          <li><a href="/contact">Contact Us</a></li>
+                          <li><a href="/contact">About Us</a></li>
                           <li><a href="http://ax9677.myfoscam.org:8081/videostream.cgi?user=guest&pwd=">Live Feed</a></li>
-                          <li><a href="/waiver">Waivers</a></li>
+                          <li class="desk-link"><a href="/waiver">Waivers</a></li>
                           <% if user_signed_in? %>
                             <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
                           <% end %>
