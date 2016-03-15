@@ -20747,3 +20747,70 @@ img.grayscale:hover {
     display: none;
   }
 }
+/*--------------------mobile index---------------------*/
+#mobile-text {
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+#mobile-logo {
+  padding: 0;
+}
+
+.mobile-hide {
+  display: none;
+}
+
+.mobile-button {
+  display: none;
+}
+
+.mbl-btn-black {
+  color: #000;
+  border-color: #000 !important;
+  background: rgba(0, 0, 0, 0);
+  background: none !important;
+  border-width: 2px !important;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+.mbl-btn-black:hover {
+  color: #57BB8A !important;
+}
+
+.mobile-show {
+  text-align: center;
+}
+
+.mobile-margin {
+  margin-top: 12em;
+  font-weight: 600;
+}
+/*properties for larger screens*/
+@media (min-width: 800px) {
+  #mobile-text {
+    display: none;
+  }
+
+  #mobile-logo {
+    padding: 10px 0;
+  }
+
+  .mobile-hide {
+    display: block;
+  }
+
+  .mobile-button {
+    display: inline-block;
+  }
+
+  .mobile-show {
+    display: none;
+  }
+
+  .mobile-margin {
+    margin-top: 0px;
+  }
+}
