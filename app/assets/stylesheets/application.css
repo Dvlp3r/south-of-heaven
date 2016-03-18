@@ -20788,6 +20788,18 @@ img.grayscale:hover {
   margin-top: 12em;
   font-weight: 600;
 }
+.mobile-img-logo {
+  object-fit: contain;
+  width: 13em;
+  margin-top: .5em;
+}
+@media (min-width: 800px) {
+  .mobile-img-logo {
+    object-fit: contain;
+    width: inherit;
+    margin-top: 0em;
+  }
+}
 /*properties for larger screens*/
 @media (min-width: 800px) {
   #mobile-text {
@@ -20812,5 +20824,10 @@ img.grayscale:hover {
 
   .mobile-margin {
     margin-top: 0px;
+  }
+  .mobile-img-logo {
+    object-fit: contain;
+    width: inherit;
+    margin-top: 0em;
   }
 }
